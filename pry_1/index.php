@@ -14,10 +14,16 @@
     <br>
 
     <?php
-      echo "Hi there!!\n";
+      echo "<p>"."Hi there!!\n"."</p>";
       $name = $_GET['Person'];
-      echo "General ".$name."!!";
-      
+      echo "<p>"."General ".$name."!!</p>";
+
+      echo "<p>".strlen("Hi Jorge")."</p>"; //How many characteres
+      echo "<p>".str_word_count("Hi Jorge")."</p>"; // How many words
+      echo "<p>".strrev("Hi Jorge")."</p>"; //Reverse
+      echo "<p>".str_pos("Hi jorgeee", "Hi")."</p>"; //Position of a word
+      echo "<p>".str_pos("Hi jorgeaa", "Hi")."</p>"; //Position of a word
+
     ?>
 
     <div>
