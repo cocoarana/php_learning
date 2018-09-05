@@ -1,3 +1,7 @@
+<?php
+  include_once('includes/dph.php');
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -14,6 +18,10 @@
     <br>
 
     <?php
+    function calc($x,$y){
+
+    }
+
       echo "<p>"."Hi there!!\n"."</p>";
       $name = $_GET['Person'];
       echo "<p>"."General ".$name."!!</p>";
@@ -33,6 +41,19 @@
       while ($a <= 10) {
         echo $a." ";
         $a++;
+      }
+
+      echo "<br><br>";
+      $sql = "Select * from  users;";
+      $result = mysqli_query($conn, $sql);
+      $resultCheck = mysqli_num_rows($result);
+      if ($resultCheck >0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+          echo $row['uid']." ".$row['username']."<br>";
+        }
+      }
+      else {
+        echo "No results on DB";
       }
 
     ?>

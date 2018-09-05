@@ -16,14 +16,29 @@
 
 
       <br><div>
-      <!--<form class="" action="index.html" method="post">
-        <p>Username:</p>
-        <input type="text" name="" value="">
-        <p>Password:</p>
-        <input type="Password" name="" value="">
-        <br><br>
-        <input type="submit" name="" value="Log In">
-      </form>-->
+        <p>To enter to the blog please log in here:</p>
+
+        <form action="activities.php?activity=0" method="post">
+          <p>Username:</p>
+          <input type="text" name="user" placeholder="Username..." autocomplete="off">
+          <p>Password:</p>
+          <input type="password" name="pass" placeholder="Password..." autocomplete="off">
+          <button type="submit" name="submit">Submit</button>
+          <?php
+          if (isset($_GET['login'])) {
+            if ($_GET['login']== 0) {
+              echo "<br><br>Incorrect username/password. Please try again.";
+            }else
+            if ($_GET['login']== 1) {
+              echo "<br><br>The session is ended.";
+            }
+          }else {
+            echo "";
+          }
+           ?>
+        </form>
+
+
     </div>
   </body>
 </html>
